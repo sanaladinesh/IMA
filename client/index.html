@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app = "imaApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>IMA System</title>
+		<meta name="description" content="Infrastructure Mapping Autonomy">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+		<script type="text/javascript" src="/js/libs/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="/js/libs/angular.js"></script>
+		<script type="text/javascript" src="/js/libs/angular-route.js"></script>
+		<script type="text/javascript" src="/js/libs/angular-resource.js"></script>
+		<script type="text/javascript" src="/js/libs/ngStorage.js"></script>
+		<script type="text/javascript" src="/js/libs/bootstrap.js"></script>
+
+		<script type="text/javascript" src="/js/app.js"></script>
+		<script type="text/javascript" src="/js/controllers/mainController.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="/">Infrastructure Mapping Autonomy</a>
+			    </div>
+			    <ul class="nav navbar-nav pull-right">
+			      <li class="active"><a href="/">Home</a></li>
+			      <li><a href="/chooseus">Choose Us</a></li>
+			      <li><a href="/projects">Previous Works</a></li>
+			      <li><a href="/contactus">Contact Us</a></li>
+			      <li><a href="/signin">Sign In</a></li>
+			    </ul>
+			  </div>
+			</nav>
+			<div ng-view>
+
+			</div>
+		</div>
+	</body>
+</html>
