@@ -19,20 +19,26 @@
 
 		<script type="text/javascript" src="/js/app.js"></script>
 		<script type="text/javascript" src="/js/controllers/mainController.js"></script>
+		<script type="text/javascript" src="/js/controllers/dashboardController.js"></script>
+		<script type="text/javascript" src="/js/controllers/profileController.js"></script>
+		<script type="text/javascript" src="/js/controllers/dataController.js"></script>
+		<script type="text/javascript" src="/js/controllers/projectsController.js"></script>
+		<script type="text/javascript" src="/js/services/services.js"></script>
 	</head>
 	<body>
 		<div class="container">
-			<nav class="navbar navbar-default">
+			<nav data-ng-hide="token || localStorage.getItem('ngStorage-token')" class="navbar navbar-default mainNav"  data-ng-controller="mainController">
 			  <div class="container-fluid">
 			    <div class="navbar-header">
 			      <a class="navbar-brand" href="/">Infrastructure Mapping Autonomy</a>
 			    </div>
-			    <ul class="nav navbar-nav pull-right">
-			      <li class="active"><a href="/">Home</a></li>
-			      <li><a href="/chooseus">Choose Us</a></li>
-			      <li><a href="/projects">Previous Works</a></li>
-			      <li><a href="/contactus">Contact Us</a></li>
-			      <li><a href="/signin">Sign In</a></li>
+			    <ul class="nav navbar-nav pull-right navMenu">
+			      <li  data-ng-hide="token" class="active"><a href="/">Home</a></li>
+			      <li><a data-ng-hide="token" href="/chooseus">Choose Us</a></li>
+			      <li><a data-ng-hide="token" href="/projects">Previous Works</a></li>
+			      <li><a data-ng-hide="token" href="/contactus">Contact Us</a></li>
+			      <li><a data-ng-hide="token" href="/signin">Sign In</a></li>
+			      <li><a data-ng-show="token" ng-click="logoutUser()">Logout</a></li>
 			    </ul>
 			  </div>
 			</nav>

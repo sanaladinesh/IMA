@@ -1,11 +1,6 @@
-var app = angular.module("imaApp", ["ngResource", "ngRoute"]);
-
-app.bindDOM = function(){
-	app.$body = $("body");
-};
+var app = angular.module("imaApp", ["ngResource", "ngRoute", "ngStorage"]);
 
 app.init = function(){
-
 
 	app.config(function($routeProvider, $locationProvider) {
 		$locationProvider.html5Mode({
@@ -32,12 +27,22 @@ app.init = function(){
 	    }).when("/signup", {
 	        templateUrl : "/views/signup.html",
 	        controller : "mainController"
+	    }).when("/dashboard", {
+	        templateUrl : "/views/dashboard.html",
+	        controller : "dashboardController"
+	    }).when("/profile", {
+	        templateUrl : "/views/profile.html",
+	        controller : "profileController"
+	    }).when("/projectlists", {
+	        templateUrl : "/views/projManagement.html",
+	        controller : "projectsController"
+	    }).when("/data", {
+	        templateUrl : "/views/data.html",
+	        controller : "dataController"
 	    }).otherwise({
 	        redirectTo: "/"
 	    });
 	});
-
-	app.bindDOM();
 
 };
 

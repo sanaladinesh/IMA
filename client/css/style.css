@@ -13,5 +13,103 @@
 	width: 30%;
 }
 .marginRight175{
-	margin-right: 175px;
+	margin-right: 190px;
+}
+.marginRight127{
+	margin-right: 127px;
+}
+.col{
+	padding: 15px;
+    /*background-color: #f1f1f1;
+    border: 1px solid #D8D8D8;*/
+}
+.wraps{
+	height: 100em;
+}
+.profilePic{
+	width: 20%;
+}
+.leftPanel{
+	border: solid;
+	height: 100%;
+}
+.rightPanel{
+	padding: 0;
+}
+.userName{
+	display: inline-block;
+	margin-left: 17px;
+}
+.company{
+	position: relative;
+    left: 90px;
+    top: -38px;
+    color: #918f8d;
+}
+.mainNav{
+	margin-bottom: 0;
+}
+.navMenu li{
+	cursor: pointer;
+}
+.jumbotron{
+	padding: 0;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.leftPanel{
+	background: #2f3a4c;
+	color: white;
+	border: 0;
+}
+.profilePic{
+	border-radius: 35px;
+    border-color: white;
+    border: solid;
+}
+.leftMenu .active{
+	background-color: #2a3344;
+	border-left: solid;
+}
+.leftMenu .row{
+	height: 55px;
+    cursor: pointer;
+    color: wheat;
+    font-size: 18px;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 25px;
+}
+.topPanel{
+	width: 100%;
+    height: 50px;
+    background: #008aa9;
+    text-align: right;
+    padding-top: 12px;
+    padding-right: 30px;
+    font-size: 19px;
+    color: white;
+    font-weight: 900;
+}
+.boxes{
+	border: solid;
+    padding: 0;
+    width: 80%;
+    margin-left: 80px;
+    margin-top: 45px;
+    border-color: #008aa9;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    background: #e4eeff;
+}
+.boxes p{
+	font-size: 18px;
+	padding-bottom: 15px;
+    padding-top: 10px;
+}
+.leftMenuLogout{
+	cursor: pointer;
+}
+.profDisp{
+	cursor: pointer;
 }

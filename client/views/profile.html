@@ -1,0 +1,117 @@
+<div class="jumbotron ng-scope">
+  <!-- Contact Me -->
+    <div class="row wraps">
+    <div class="col col-sm-4 leftPanel">
+      <div class="row">
+        <div class="col col-sm-12 profDisp" ng-click="getProfile()">
+          <img class="profilePic" src="/assets/profile.png">
+          <h3 class="userName">{{ user.name }}</h3>
+          <h5 class="company">{{ user.company }}</h5>
+      </div>
+      </div>
+      <hr>
+      <div class="leftMenu">
+        <div class="row">
+          <div class="col-sm-12" ng-click="getDashboard()">
+            <span class="glyphicon glyphicon-home"></span>
+            Dashboard
+          </div>
+        </div>
+        <div class="row active">
+          <div class="col-sm-12" ng-click="getProfile()">
+            <span class="glyphicon glyphicon-user"></span>
+            Profile
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" ng-click="getProjects()">
+            <span class="glyphicon glyphicon-th-list"></span>
+            Project Management
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" ng-click="getData()">
+            <span class="glyphicon glyphicon-book"></span>
+            Data Management
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="leftMenuLogout">
+        <div class="row">
+          <div data-ng-show="token" ng-click="logoutUser()" class="col-sm-12">
+            <span class="glyphicon glyphicon-repeat"></span>
+            Logout
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-sm-8 rightPanel">
+      <div class="topPanel">Infrastructure Mapping Autonomy</div>
+      <div class="jumbotron">
+        <h3>Edit your details</h3>
+        <br>
+        <br>
+        <form ng-submit="editUser()">
+            <div class="form-group row">
+                <label for="inputEmail" class="col-md-4">First Name</label>
+                <input type="firstName" class="col-md-6" id="inputFirstName" placeholder="First Name" ng-model="user.name">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail" class="col-md-4">Last Name</label>
+                <input type="lastName" class="col-md-6" id="inputLastName" placeholder="Last Name"  ng-model="lastNameValue">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail" class="col-md-4">Username/Email</label>
+                <input type="email" class=" col-md-6" id="inputEmail" placeholder="Username / Email"  ng-model="user.username">
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword"   class="col-md-4">Password</label>
+                <input type="password" class=" col-md-6" id="inputPassword" placeholder="Password"  ng-model="passValue1">
+                <br>
+                <input type="password" class="col-md-6 pull-right marginRight127" id="inputPassword2" placeholder="Password"  ng-model="passValue2">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail"   class="col-md-4">Country</label>
+                <input type="country" class="col-md-6" id="inputCountry" placeholder="Country"   ng-model="countryValue">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail"   class="col-md-4">Phone</label>
+                <input type="phone" class="col-md-6" id="inputPhone" placeholder="Phone Number"   ng-model="phnNumValue">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail"   class="col-md-4">Alternative Phone</label>
+                <input type="altPhone" class="col-md-6" id="inputAltPhone" placeholder="Alternative Phone Number"   ng-model="altPhnNumValue">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail"   class="col-md-4">Existing Company</label>
+                <input type="existingCompany" class="col-md-6" id="inputexistingCompany" placeholder="Existing Company" ng-model="user.company">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail"   class="col-md-4">New Company Name</label>
+                <input type="companyName" class="col-md-6" id="inputCompanyName" placeholder="New Company Name"  ng-model="newCompanyName">
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail"   class="col-md-4">New Company Address</label>
+                <input type="companyAddress1" class="col-md-6" id="inputCompanyAddress1" placeholder="Company Address - Street" ng-model="newCompanyAddress1">
+            </div>
+            <div class="form-group row">
+                <input type="companyAddress2" class="col-md-6 pull-right marginRight127" id="inputCompanyAddress2" placeholder="Company Address - City" ng-model="newCompanyAddress2">
+            </div>
+            <div class="form-group row">
+                <input type="companyState" class="col-md-6 pull-right marginRight127" id="inputCompanyState" placeholder="Company Address - State" ng-model="newCompanyAddress3">
+            </div>
+            <div class="form-group row">
+                <input type="companyContact" class="col-md-6 pull-right marginRight127" id="inputCompanyContact" placeholder="Company Contact Number"  ng-model="newCompanyNum">
+            </div>
+            <div class="form-group row">
+                <input type="companyEmail" class="col-md-6 pull-right marginRight127" id="inputCompanyEmail" placeholder="Company Email Address"  ng-model="newCompanyEmail">
+            </div>
+            <div class=" row ">
+                <button type="submit" class=" btn btn-primary regester">Edit</button>
+            </div>
+        </form>
+    </div>
+    </div>
+  </div>
+</div>

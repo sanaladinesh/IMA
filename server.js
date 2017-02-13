@@ -3,10 +3,6 @@ var path = require('path');
 var app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
-var expressValidator = require('express-validator');
-var flash = require('connect-flash');
-var session = require('express-session');
-var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require("mongoose");
@@ -44,57 +40,40 @@ app.get("/signup", function(req, res){
 	res.sendfile(__dirname + "/client/index.html");
 });
 
-// Express Session
-app.use(session({
-    secret: 'secret',
-    saveUninitialized: true,
-    resave: true
-}));
+app.get("/dashboard", function(req, res){
+  res.sendfile(__dirname + "/client/index.html");
+});
 
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
+app.get("/profile", function(req, res){
+  res.sendfile(__dirname + "/client/index.html");
+});
 
-// Express Validator
-app.use(expressValidator({
-  errorFormatter: function(param, msg, value) {
-      var namespace = param.split('.')
-      , root    = namespace.shift()
-      , formParam = root;
+app.get("/projectlists", function(req, res){
+  res.sendfile(__dirname + "/client/index.html");
+});
 
-    while(namespace.length) {
-      formParam += '[' + namespace.shift() + ']';
-    }
-    return {
-      param : formParam,
-      msg   : msg,
-      value : value
-    };
-  }
-}));
-
-// Connect Flash
-app.use(flash());
-
-// Global Vars
-app.use(function (req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  res.locals.user = req.user || null;
-  next();
+app.get("/data", function(req, res){
+  res.sendfile(__dirname + "/client/index.html");
 });
 
 //REST APIs
-app.post("/api/createUser", usersController.create);
-app.post("/api/loginUser", usersController.login);
+//app.post("/api/createUser", usersController.create);
+//app.post("/api/loginUser", usersController.login);
 
 //Public Directories
 app.use("/js", express.static(__dirname + "/client/js"));
 app.use("/css", express.static(__dirname + "/client/css"));
 app.use("/views", express.static(__dirname + "/client/views"));
+app.use("/assets", express.static(__dirname + "/client/assets"));
+app.use("/fonts", express.static(__dirname + "/client/assets/fonts"));
 
 //Server Creation
 app.listen(3000, function(){
 	console.log("I am listening...");
 });
+
+
+
+
+
+
